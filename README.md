@@ -1,24 +1,45 @@
-# Lumen PHP Framework
+# Anime CRUD API
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://img.shields.io/packagist/dt/laravel/framework)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://img.shields.io/packagist/v/laravel/framework)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://img.shields.io/packagist/l/laravel/framework)](https://packagist.org/packages/laravel/lumen-framework)
+API RESTful criada com Lumen que permite gerenciar um banco de dados de animes. 
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+## Requisitos
 
-## Official Documentation
+- PHP >= 7.3
+- Composer
 
-Documentation for the framework can be found on the [Lumen website](https://lumen.laravel.com/docs).
+## Instalação
 
-## Contributing
+1. Clone o repositório:
+   ```sh
+   git clone https://github.com/seu-usuario/anime-crud-api.git
+   cd anime-crud-api
+2.Instale as dependências do projeto:
+  ```sh
+  composer install
+```
+3.Configure o arquivo .env. Você pode copiar o arquivo de exemplo:
+```sh
+cp .env.example .env
+```
+4. Configure o banco de dados no arquivo .env.
+5. Execute as migrações do banco de dados:
+```sh
+php artisan migrate
+```
 
-Thank you for considering contributing to Lumen! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Executando o Servidor
+Para iniciar o servidor, use o seguinte comando:
+```sh
+php -S localhost:5001 -t public
+```
 
-## Security Vulnerabilities
+## Estrutura do Projeto
 
-If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+- `/app` - Contém o código da aplicação
+- `/routes` - Contém as definições de rotas da API
+- `/database` - Contém as migrações e seeders do banco de dados
+- `/public` - Contém o ponto de entrada público para a aplicação
 
-## License
+  
 
-The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
