@@ -17,4 +17,13 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$router->get('/categoria', 'CategoriaController@index');
+$router->group(['prefix' => 'apiV1'], function () use ($router) {
+
+    $router->group(['prefix' => 'animes'], function () use ($router) {
+
+        $router->get('/', 'AnimeController@getAll'); 
+        $router->get('{id}', 'AnimeController@show');
+        $router->post('/', 'AnimeController@create');
+    });
+
+});

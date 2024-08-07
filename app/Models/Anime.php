@@ -13,8 +13,9 @@ class Anime extends Model
 
     protected $fillable = [
         'titulo', 
-        'descricao', 
+        'resumo', 
         'genero', 
-        'data_lancamento'
+        'lancamento',
+        'episodios'
     ];
 }
