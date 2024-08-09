@@ -25,6 +25,7 @@ $router->group(['prefix' => 'apiV1'], function () use ($router) {
         $router->get('{id}', 'AnimeController@show');
         $router->post('/', 'AnimeController@create');
         $router->delete('{id}', 'AnimeController@delete');
+        $router->put('{id}', 'AnimeController@update');
     });
 
 });
