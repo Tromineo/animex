@@ -44,7 +44,7 @@ class AnimeController extends Controller
 
     public function create(Request $request): JsonResponse
     {
-    
+        
         $anime = Anime::create([
             'titulo' => $request->input('titulo'),
             'resumo' => $request->input('resumo'),
@@ -55,6 +55,23 @@ class AnimeController extends Controller
 
         return response()->json($anime, 201);
 
+    }
+
+    public function delete(Request $request): JsonResponse
+    {
+        $id = $request->id;
+        $id = filter_var($id, FILTER_VALIDATE_INT);
+
+        if ($id !== false) {
+            
+        } else {
+            return response()->json(false, 204);
+        }
+
+        $anime = Anime::find($id);
+        $anime->delete();
+        return response()->json($id,200);
+    
     }
 
     //
