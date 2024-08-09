@@ -23,9 +23,15 @@ class AnimeController extends Controller
 
     }
 
-    public function getAll()
+    public function getAll(Request $request)
     {
-        $animes = $this->model->all();
+        $paginacao = $request->query('por_pagina');
+        if ($paginacao) {
+            $animes = $this->model->paginate($paginacao);
+        } else {
+            $animes = $this->model->all();
+        }
+        
         return response()->json($animes, Response::HTTP_OK);
     }
 
