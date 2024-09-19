@@ -28,4 +28,9 @@ $router->group(['prefix' => 'apiV1'], function () use ($router) {
         $router->put('{id}', 'AnimeController@update');
     });
 
+    $router->post('login', 'AuthController@login');
+    $router->post('logout', 'AuthController@logout');
+    $router->post('register', 'AuthController@register');
+
+
 });

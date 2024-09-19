@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
 use App\Models\Anime;
 
@@ -14,6 +15,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Anime::factory(10)->create();
+        Model::unguard();
+        $this->call(UsersTableSeeder::class);
+        Model::reguard();
     }
 }
