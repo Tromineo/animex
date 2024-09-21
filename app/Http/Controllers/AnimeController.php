@@ -16,7 +16,7 @@ class AnimeController extends Controller
     public function __construct(Anime $anime)
     {
         $this->model = $anime;
-        $this->middleware('auth:api', ['except' => ['getAll']]);
+        $this->middleware('auth:api', ['except' => ['index', 'show']]);
 
     }
 
