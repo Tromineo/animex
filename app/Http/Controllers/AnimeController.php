@@ -20,12 +20,19 @@ class AnimeController extends Controller
 
     }
 
-    public function index()
-    {
 
-    }
-
-    public function getAll(Request $request)
+    /**
+     * Retorna todos os animes presentes na base de dados.
+     * 
+     * A resposta pode ser paginada. Se a query string "por_pagina" for passada, a resposta
+     * retorna os animes paginados com o valor especificado. Caso n o seja passado, a resposta
+     * retorna todos os animes.
+     * 
+     * @param Request $request A requisi o HTTP.
+     * 
+     * @return JsonResponse A resposta JSON com os animes.
+     */
+    public function index(Request $request)
     {
         $paginacao = $request->query('por_pagina');
         if ($paginacao) {
@@ -48,7 +55,6 @@ class AnimeController extends Controller
     */
     public function show(int $id): JsonResponse
     {
-    
         $result = Anime::find($id);
 
         if (!$result) {
